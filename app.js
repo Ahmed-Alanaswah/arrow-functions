@@ -198,8 +198,10 @@ console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// the Student object
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// the global window object.
 // 3. Explain why "this" is different when an arrow function is used.
-//
+/*There are a few caveats with arrow functions, though. Most importantly, the this context is not reset within an arrow function. The value of this is therefore the same as the this of the enclosing scope (the surrounding non-arrow function). If there isn’t a non-arrow function scope surrounding, the this context will be, in the browser, the global window object.
+
+Why does this happen? It happens because arrow functions retain the this value of the enclosing functional scope. Therefore, you will want to avoid using an arrow function in a constructor (where we need the contextual this to be the object we are building) or any method that needs to use this to behave properly.*/
